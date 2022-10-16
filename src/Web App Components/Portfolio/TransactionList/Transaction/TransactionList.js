@@ -1,6 +1,6 @@
 import {useState} from "react"
-import Transaction from "/Transaction.js"
-import InputAdd from "./InputAdd/InputAdd.js"
+import Transaction from ".Transaction"
+import InputAdd from "../InputAdd/InputAdd"
 
 const TransactionList =(props)=>{
     const [list,setList] = useState([])
@@ -25,8 +25,7 @@ const TransactionList =(props)=>{
                         year={item.year}
                         note={item.note}
                         amount={item.amount}
-                        icon={item.icon}
-                        category={item.category}/>
+                        type={item.type}/>
                 )
             })}
         </div>

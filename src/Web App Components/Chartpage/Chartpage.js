@@ -1,4 +1,4 @@
-import Chart from "/Chart.js"
+import Chart from "./Chart"
 
 const Chartpage = (props) => {
     return(
