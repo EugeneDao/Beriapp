@@ -28,7 +28,7 @@ const Chart = (props) => {
         )
     }
 
-const Graph = () => 
+const Graph =()=> 
 {}
 
 
