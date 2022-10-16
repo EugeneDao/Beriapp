@@ -1,12 +1,13 @@
+import Profile from "./Profile/Profile"
+import Summary from "./Summary/Summary"
 import TransactionList from "/Transaction/TransactionList.js"
-import RegularIncomes from "/RegularIncomes/RegularIncomes.js"
 
 const Portfolio = (props) => {
     return (
         <div>
             <Profile/>
             <TransactionList/>
-            <RegularIncomes/>
+            <Summary/>
         </div>
     )
 }
