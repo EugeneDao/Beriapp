@@ -1,0 +1,14 @@
+.nav-main{
+    display: flex;
+
+}
+.navbar{
+    width: 80px;
+    background-color: #ffff;
+    position: fixed;
+    height: 100%;
+}
+.content{
+    flex:1;
+    background-color: aqua;
+}
