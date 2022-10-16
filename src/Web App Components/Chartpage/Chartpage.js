@@ -1,4 +1,5 @@
 import Chart from "./Chart"
+import "./Chartpage.css"
 
 const Chartpage = (props) => {
     return(

@@ -1,3 +1,5 @@
+import "./Transaction.css"
+
 const Transaction =(props)=>{
     return(
         <div className="transaction">
