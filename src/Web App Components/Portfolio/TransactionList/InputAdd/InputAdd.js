@@ -15,7 +15,6 @@ const InputAdd =(props)=>{
     const [amount,setAmount] = useState(0)
     const [date,setDate] = useState()
     const [type,setType] = useState("Expense")
-    const [category,setCategory] = useState()
 
     const changeNote =(e)=>{
         setNote(e.target.value)
@@ -26,9 +25,8 @@ const InputAdd =(props)=>{
     const changeDate =(e)=>{
         setDate(e.target.value)
     }
-    const selectCategory =(e)=>{
-        setType()
-        setCategory(e.target.value)
+    const selectType =(e)=>{
+        setType(e.target.value)
     }
 
     if (closed){
@@ -38,8 +36,9 @@ const InputAdd =(props)=>{
             <div>{/* tên người dùng ở đây */}</div>
 
 
-            <select onSelect={selectCategory} value={category}>
-                {categoryList.map((item)=>{return(<option></option>)})}
+            <select onSelect={selectType} value={type}>
+                <option>Expense</option>
+                <option>Income</option>
             </select>
 
             <input type="number" placeholder="Số tiền" onChange={changeAmount} value={amount}/>
