@@ -4,6 +4,7 @@ import "./HeroSection.css";
 import { useState } from "react";
 import firebase, { auth } from "./config";
 import { useNavigate } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 const fbProvider = new firebase.auth.FacebookAuthProvider();
 
 
@@ -27,6 +28,7 @@ function HeroSection(props) {
       navigate('/')
     });
   };
+
 
   return (
     <div className="hero-container">

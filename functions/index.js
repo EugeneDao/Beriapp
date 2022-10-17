@@ -15,7 +15,7 @@ exports.getData = functions.https.onRequest((request, response) => {
     .then((data) => {
       let transaction = [];
       data.forEach((doc) => {
-        transaction.push(doc.data());
+        transaction.push(doc.data());    
       });
       return response.json(transaction);
     })
