@@ -1,22 +1,50 @@
-import "./NavBar.css"
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
-const NavBar =()=>{
+const NavBar=()=>{
+    return (
+        <Box sx={{ flexGrow: 1,}}>
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+              
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+              
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
 
-    return(
-        <div>
-            <button className="navbar-button report">Report
-            </button>
+            </Toolbar>
+          </AppBar>
+        </Box>
+      );
+  }
 
-            <button className="navbar-button portfolio" onClick={handleOnClickPortfolio}>Portfolio</button>
-
-
-                <div className="navbar-dropdown">
-                    <button className="nav-bar-button transactions">Transactions</button>
-                    <button className="nav-bar-button summary">Summary</button>
-                </div>
-                
-        </div>
-    )
-}
-
-export default NavBar
+  export default NavBar
