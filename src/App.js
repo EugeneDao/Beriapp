@@ -6,10 +6,11 @@ import Services from './LandingPage/pages/Services'
 import Products from './LandingPage/pages/Products'
 import SignUp from './LandingPage/pages/SignUp'
 import { BrowserRouter as Router, Switch, Route, useNavigate, Routes, Form } from 'react-router-dom';
+
 function App() {
   return (
     <div>
-       <Router>
+     <Router>
 
 {/* <Navbar/> */}
 <Routes>

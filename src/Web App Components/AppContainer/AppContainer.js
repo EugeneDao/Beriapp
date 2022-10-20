@@ -1,14 +1,18 @@
-import Chartpage from "../Chartpage/Chartpage"
+import {Box,Typography,Button,Stack,Grid} from "@mui/material"
 import NavBar from "../NavBar/NavBar"
-import Portfolio from "../Portfolio/Portfolio"
+import TransactionList from "../Portfolio/TransactionList/TransactionList"
 
 const AppContainer =()=>{
     return(
-        <div>
+        <Box sx={{
+            width:"100vw",
+            height:"100vh",
+            backgroundColor:"#daebdf",
+            padding:'10px'
+        }}>
             <NavBar/>
-            <Chartpage/>
-            <Portfolio/>
-        </div>
+            <TransactionList/>
+        </Box>
     )
 }
 
