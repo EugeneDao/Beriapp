@@ -1,9 +1,0 @@
-.transaction{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    border-color: gray;
-    background: black;
-}

@@ -1,15 +1,24 @@
-import "./Transaction.css"
+import {Box,Button,Typography} from "@mui/material"
 
 const Transaction =(props)=>{
     return(
-        <div className="transaction">
-            <h1 className="type">{props.type}</h1>
-            <h1 className="date">{props.day}
-                <span>Tháng {props.month}, {props.year}</span>
-            </h1>
-            <p className="transaction-note">{props.note}</p>
-            <p className="amount">{props.amount} VNĐ</p>
-        </div>
+        <Box sx={{
+            backgroundColor: 'lightgreen',
+            border: '2px solid grey',
+            borderRadius: '10px',
+            width:'100%',height:'20%',
+
+            display:'flex',
+            justifyContent:'space-around',
+            alignContent:'center',
+            flexWrap: 'wrap',
+        }}>
+            <Typography>{props.day}</Typography>
+            <Typography> Tháng {props.month}, {props.year}</Typography>
+            <Typography>{props.type}</Typography>
+            <Typography>{props.note}</Typography>
+            <Typography>{props.amount}</Typography>
+        </Box>
     )
 }
 
