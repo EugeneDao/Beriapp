@@ -10,22 +10,49 @@ const TransactionList =(props)=>{
     const btnStyle={
         backgroundColor:'green',
         '&:hover':{
-        backgroundColor:'lightgreen',
-        color:'darkgreen',
+            backgroundColor:'lightgreen',
+            color:'darkgreen',
         }};
 
     {/* Phần state Popup Modal của InputAdd */}
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-    {/* Hết rồi có 3 dòng thôi */}
+    const handleClose = () => {
+        console.log(open);
+        setOpen(false);
+        console.log(open);
+    }
+    const close=(x)=>{
+        setOpen(x);
+    }
+    {/* Hết rồi */}
 
     const [list,setList] = useState([
-        {type:'Expense',note:'Phúc đi tay vịn giá rẻ rủi ro cao',amount:300000,day:16,month:10,year:2022},
-        {type:'Income',note:'Phúc được Giang tặng voucher buffet',amount:200000,day:14,month:5,year:2022},
-        {type:'Income',note:'Project được thưởng giải nhất',amount:500000,day:17,month:10,year:2022},
+        {type:'Expense',note:'Phúc đi tay vịn',amount:300000,day:16,month:10,year:2022},
+        {type:'Income',note:'Phúc được đãi buffet',amount:200000,day:14,month:5,year:2022},
+        {type:'Income',note:'Project được giải nhất',amount:500000,day:17,month:10,year:2022},
     ])
 
+    const addList = (x)=>{
+        setList([...list,x])
+
+    }
+
+    console.log(list)
+
+    let ngay = new Date()
+    const [thang,setThang]=useState(ngay.getMonth()+1);
+
+    const chooseMonth =(e)=>{
+        const arr=e.target.value.split("-")
+        setThang(parseInt(arr[1],10));
+        console.log(thang)
+        const filterList=list.filter((item)=>item.month===thang)
+        console.log(filterList)
+        }
+        
+    
+    
     return(
         <Box sx={{
             position: 'relative',
@@ -49,12 +76,15 @@ const TransactionList =(props)=>{
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-                sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <InputAdd/>
-            </Modal>{/* Modal Pop-up của InputAdd */}
+                sx={{display:'flex',justifyContent:'center',alignItems:'center'}}
+                >
+                    <InputAdd addList={addList}/>
+            </Modal>
+            {/* Modal Pop-up của InputAdd */}
 
-            {/* */}
-            <Button>Month Filter</Button>
+
+            {/* <Button>Month Filter</Button> */}
+            <input type="month" onChange={chooseMonth}></input>
 
             <Box sx={{backgroundColor:'white', width:'60%',height:'60%', m:'auto', mt:'5%'}}>
 
