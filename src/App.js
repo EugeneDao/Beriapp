@@ -5,11 +5,14 @@ import NavbarMain from './LandingPage/ComponentsMain/NavbarMain'
 import Services from './LandingPage/pages/Services'
 import Products from './LandingPage/pages/Products'
 import SignUp from './LandingPage/pages/SignUp'
+import AuthProvider from './LandingPage/authprovider';
 import { BrowserRouter as Router, Switch, Route, useNavigate, Routes, Form } from 'react-router-dom';
 
 function App() {
   return (
     <div>
+     
+      <AuthProvider>
       <Router>
 
 {/* <Navbar/> */}
@@ -21,6 +24,7 @@ function App() {
   <Route path='/sign-up' element={<SignUp />} />
 </Routes>
 </Router>
+      </AuthProvider>
     </div>
   );
 }
