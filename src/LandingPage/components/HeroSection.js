@@ -4,23 +4,31 @@ import "./HeroSection.css";
 import { useState } from "react";
 import firebase, { auth } from "./config";
 import { useNavigate } from 'react-router-dom';
-import {useHistory} from 'react-router-dom';
+import { addDocument, generateKeywords } from '../../firebase/services';
 const fbProvider = new firebase.auth.FacebookAuthProvider();
-
-
 
 
 function HeroSection(props) {
   const [modal, setModal] = useState(false);
   const navigate = useNavigate(null);
-
   const toggleModal = () => {
     setModal(true); 
     props.down(modal);
   };
-
-  const handleFbLogin = () => {
-    
+  
+  const handleFbLogin = async (FbProvider) => {
+    const { additionalUserInfo, user } = await auth.signInWithPopup(FbProvider);
+    if (additionalUserInfo?.isNewUser) {
+      addDocument('users', {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        providerId: additionalUserInfo.providerId,
+        keywords: generateKeywords(user.displayName?.toLowerCase()),
+        createdAt: user.createdAt
+      });
+    }
     auth.signInWithPopup(fbProvider).then(res => {
       console.log(res);
       navigate('/beri')
@@ -28,7 +36,6 @@ function HeroSection(props) {
       navigate('/')
     });
   };
-
 
   return (
     <div className="hero-container">
