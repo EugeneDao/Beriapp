@@ -1,32 +1,48 @@
-import {Box,Button,Typography,AppBar,Toolbar} from '@mui/material'
+import {useNavigate } from 'react-router-dom';
+
+import {Box,Button,AppBar,Toolbar} from '@mui/material'
 import {BarChart, AssignmentInd, AccountBalanceWallet, Summarize, Logout} from '@mui/icons-material';
 
 const NavBar =()=> {
     const btnStyle={
         width: "100%",
         m:"5px",
-        backgroundColor:"green",
+        backgroundColor:"#2db84c",
         '&:hover':{
-            backgroundColor: '#00ff49',
-            color:'darkgreen',
+            backgroundColor: '#34d157',  
         },
-        border: "2px solid green"
+        border: "0px"
     };
+
+    const btnStyleLogout={
+        width: "100%",
+        m:"5px",
+        backgroundColor:"#2db84c",
+        '&:hover':{
+            backgroundColor: 'red',  
+        },
+        border: "0px"
+    };
+
+    const navigate=useNavigate()
+    const clickLogout=()=>{
+        navigate('/')
+    }
 
     return (
         <Box sx={{
             width: "15%",height: "100%",
-            backgroundColor: "green",
+            backgroundColor: "#FFFF",
             borderRadius:"12px",
-            padding: "5px",
+            padding: "3px",
             }}>
 
             <AppBar position="static"
                     style={{
                         width: "100%",height: "100%",
-                        backgroundColor: "yellow",
+                        backgroundColor:"#bdbdbd",
                         borderRadius: "inherit",
-                        padding: "5px",
+                        padding: "2px",
                         }}>
 
                 <Toolbar style={{
@@ -35,7 +51,7 @@ const NavBar =()=> {
                     justifyContent: 'flex-start',
                     alignItems: 'center',
                     width: "100%",height: "100%",
-                    backgroundColor: "#062910",
+                    backgroundColor: "#FFFF",
                     borderRadius:"inherit",
                     m: "auto",
                     padding: "5px",}}>
@@ -75,7 +91,8 @@ const NavBar =()=> {
                     <Button
                         variant="contained"
                         startIcon={<Logout />}
-                        sx ={btnStyle}
+                        sx ={btnStyleLogout}
+                        onClick={clickLogout}
                         >
                         Logout
                     </Button>

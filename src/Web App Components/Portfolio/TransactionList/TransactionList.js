@@ -1,18 +1,23 @@
 import {useState} from "react"
-import {Box,Modal,Typography,Button,Stack} from '@mui/material'
+import {Input,Box,Modal,Typography,Button} from '@mui/material'
 
 import Transaction from "./Transaction/Transaction"
 import InputAdd from "./InputAdd/InputAdd"
 
 const TransactionList =(props)=>{
 
-    {/* style css button */}
+    {/* style css general */}
     const btnStyle={
-        backgroundColor:'green',
+        m:'5px',
+        backgroundColor:'#2db84c',
         '&:hover':{
-            backgroundColor:'lightgreen',
-            color:'darkgreen',
+            backgroundColor:'#34d157',
         }};
+
+    const filterStyle={
+        backgroundColor: '#FFFF'
+    }
+    {/*end of css general*/}
 
     {/* Phần state Popup Modal của InputAdd */}
     const [open, setOpen] = useState(false);
@@ -51,20 +56,30 @@ const TransactionList =(props)=>{
         console.log(filterList)
         }
         
-    
+    const usernameDisplay = {}/* gọi API username */
+
+    const transactionData = []/* gọi API transaction để lấy dữ liệu từ database xuất ra UI */
+
+    const callBalance=(x)=>{
+        let sum = 0
+        for (let i = 0; i < x.length; i++){
+            sum += transactionData[i].amount
+        }
+        return sum
+    }
     
     return(
         <Box sx={{
             position: 'relative',
             left:'15%',bottom:'100%',
             width:'85%',height:'100%',
-            backgroundColor:'#bacfc4',
+            backgroundColor:'#E4E4E4',
             padding:'10px',
         }}>
             
             <Box>{/* Số dư hiện tại */}
-                <Typography variant="h5">Username</Typography>
-                <Typography variant="h5">Balance: </Typography>
+                <Typography variant="h5">{usernameDisplay.name}</Typography> {/* thuộc tính tên người dùng trong object người dùng */}
+                <Typography variant="h6">Current Balance: {callBalance(transactionData)} </Typography>
             </Box>
 
             <Button sx={btnStyle} variant='contained' onClick={handleOpen}>
@@ -84,11 +99,11 @@ const TransactionList =(props)=>{
 
 
             {/* <Button>Month Filter</Button> */}
-            <input type="month" onChange={chooseMonth}></input>
+            <Input type="month" sx={filterStyle} onChange={chooseMonth}></Input>
 
-            <Box sx={{backgroundColor:'white', width:'60%',height:'60%', m:'auto', mt:'5%'}}>
+            <Box sx={{backgroundColor:'#FFFF', width:'50%',height:'60%', m:'auto', mt:'5%',borderRadius:'9px'}}>
 
-                {list.map((item)=>{
+                {transactionData.map((item)=>{
                     return(
                         <Transaction
                             key={item.id}

@@ -8,11 +8,9 @@ const InputAdd = (props) => {
     {/* Chỗ này là css cho 2 nút [SAVE] và [CANCEL] */ }
     const btnStyle = {
         color: 'white',
-        bgcolor: 'darkgreen',
-        border: '2px solid darkgreen',
+        bgcolor: '#2db84c',
         '&:hover': {
-            bgcolor: '#00ff49',
-            color: 'darkgreen'
+            bgcolor: '#34d157',
         },
     };
 
@@ -73,8 +71,7 @@ const InputAdd = (props) => {
     return (
         <Box sx={{
             width: '70%', height: '60%',
-            color: 'darkgreen',
-            backgroundColor: '#bacfc4',
+            backgroundColor: '#FFFF',
             borderRadius: '20px',
             padding: '30px',
             display: 'flex',
@@ -83,7 +80,7 @@ const InputAdd = (props) => {
             gap: '20px',
         }}>
 
-            <Typography variant="h5">Username</Typography>
+            <Typography variant="h5">Add a new transaction</Typography>
 
             <Grid sx={{
                 display: 'flex',
@@ -95,7 +92,7 @@ const InputAdd = (props) => {
             }}>
 
                 <FormControl sx={{ width: '20%', }}>
-                    <InputLabel id="demo-simple-select-label" >Loại giao dịch</InputLabel>
+                    <InputLabel id="demo-simple-select-label" >Choose Type</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -104,14 +101,14 @@ const InputAdd = (props) => {
                         label="Type"
                         onChange={selectType}
                     >
-                        <MenuItem value={"Expense"}>Chi tiêu</MenuItem>
-                        <MenuItem value={"Income"}>Thu nhập</MenuItem>
+                        <MenuItem value={"Expense"}>Expense</MenuItem>
+                        <MenuItem value={"Income"}>Income</MenuItem>
                     </Select>
                 </FormControl>
 
                 <TextField
                     id="note"
-                    label="Nhập ghi chú"
+                    label="Note"
 
                     sx={{ width: '70%' }}
 
@@ -122,7 +119,8 @@ const InputAdd = (props) => {
 
                 <TextField
                     id="date"
-                    label="Ngày giao dịch"
+                    sx={{width:'20%'}}
+                    label="Date of transaction"
                     type="date"
                     InputLabelProps={{ shrink: true, }}
                     onChange={changeDate}
@@ -130,7 +128,8 @@ const InputAdd = (props) => {
 
                 <TextField
                     id="amount"
-                    label="Số tiền"
+                    sx ={{width:'30%'}}
+                    label="Amount"
                     type="number"
                     InputLabelProps={{ shrink: true, }}
                     onChange={changeAmount}
