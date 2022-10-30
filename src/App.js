@@ -7,6 +7,7 @@ import Products from './LandingPage/pages/Products'
 import SignUp from './LandingPage/pages/SignUp'
 import AuthProvider from './LandingPage/authprovider';
 import { BrowserRouter as Router, Switch, Route, useNavigate, Routes, Form } from 'react-router-dom';
+import AppContainer from './Web App Components/AppContainer/AppContainer';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
 {/* <Navbar/> */}
 <Routes>
   <Route path='/' exact element={<Home />} />
-  <Route path='/beri' element={<NavbarMain />} />
+  <Route path='/beri' element={<AppContainer />} />
   <Route path='/services' element={<Services />} />
   <Route path='/products' element={<Products />} />
   <Route path='/sign-up' element={<SignUp />} />
