@@ -4,7 +4,7 @@ import "./HeroSection.css";
 import { useState } from "react";
 import firebase, { auth } from "./config";
 import { useNavigate } from 'react-router-dom';
-import { addDocument, generateKeywords } from '../../firebase/services';
+import { addDocument, generateKeywords } from './services';
 const fbProvider = new firebase.auth.FacebookAuthProvider();
 
 
