@@ -17,18 +17,18 @@ function HeroSection(props) {
   };
   
   const handleFbLogin = async (FbProvider) => {
-    const { additionalUserInfo, user } = await auth.signInWithPopup(FbProvider);
-    if (additionalUserInfo?.isNewUser) {
-      addDocument('users', {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-        uid: user.uid,
-        providerId: additionalUserInfo.providerId,
-        keywords: generateKeywords(user.displayName?.toLowerCase()),
-        createdAt: user.createdAt
-      });
-    }
+    // const { additionalUserInfo, user } = await auth.signInWithPopup(FbProvider);
+    // if (additionalUserInfo?.isNewUser) {
+    //   addDocument('users', {
+    //     displayName: user.displayName,
+    //     email: user.email,
+    //     photoURL: user.photoURL,
+    //     uid: user.uid,
+    //     providerId: additionalUserInfo.providerId,
+    //     keywords: generateKeywords(user.displayName?.toLowerCase()),
+    //     createdAt: user.createdAt
+    //   });
+    // }
     auth.signInWithPopup(fbProvider).then(res => {
       console.log(res);
       navigate('/beri')
@@ -58,6 +58,6 @@ function HeroSection(props) {
       </div>
     </div>
   );
-}
+  }
 
 export default HeroSection;

@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
      
-      <AuthProvider>
+      {/* <AuthProvider> */}
       <Router>
 
 {/* <Navbar/> */}
@@ -30,7 +30,7 @@ function App() {
   <Route path='/sign-up' element={<SignUp />} />
 </Routes>
 </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }
