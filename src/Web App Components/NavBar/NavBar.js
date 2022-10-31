@@ -1,6 +1,7 @@
 import {useNavigate } from 'react-router-dom';
 
 import {Box,Button,AppBar,Toolbar} from '@mui/material'
+import '@mui/icons-material'
 import {BarChart, AssignmentInd, AccountBalanceWallet, Summarize, Logout} from '@mui/icons-material';
 
 const NavBar =()=> {

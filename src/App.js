@@ -19,12 +19,12 @@ function App() {
 {/* <Navbar/> */}
 <Routes>
   <Route path='/' exact element={<Home />} />
-<<<<<<< HEAD
+{/* <<<<<<< HEAD */}
   <Route path='/beri' element={<NavbarMain />} />
   
 =======
   <Route path='/beri' element={<AppContainer />} />
->>>>>>> 20df888ade5924f8ddf21c2c6e9bdc9f7cf8b493
+{/* >>>>>>> 20df888ade5924f8ddf21c2c6e9bdc9f7cf8b493 */}
   <Route path='/services' element={<Services />} />
   <Route path='/products' element={<Products />} />
   <Route path='/sign-up' element={<SignUp />} />
