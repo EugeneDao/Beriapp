@@ -7,8 +7,7 @@ const AppContainer =()=>{
         <Box sx={{
             width:"100vw",
             height:"100vh",
-            backgroundColor:"#daebdf",
-            padding:'10px'
+            backgroundColor:"#FFFF",
         }}>
             <NavBar/>
             <TransactionList/>

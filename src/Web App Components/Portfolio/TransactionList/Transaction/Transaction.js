@@ -17,7 +17,7 @@ const Transaction =(props)=>{
             <Typography> Tháng {props.month}, {props.year}</Typography>
             <Typography>{props.type}</Typography>
             <Typography>{props.note}</Typography>
-            <Typography>{props.amount}</Typography>
+            <Typography>{props.type==="Expense"?props.amount*-1:props.amount}</Typography>
         </Box>
     )
 }
