@@ -1,5 +1,5 @@
 import {useNavigate } from 'react-router-dom';
-
+import { auth } from '../../LandingPage/components/config';
 import {Box,Button,AppBar,Toolbar} from '@mui/material'
 import {BarChart, AssignmentInd, AccountBalanceWallet, Summarize, Logout} from '@mui/icons-material';
 
@@ -26,7 +26,9 @@ const NavBar =()=> {
 
     const navigate=useNavigate()
     const clickLogout=()=>{
+    //     auth.signOut
         navigate('/')
+
     }
 
     return (
@@ -92,7 +94,7 @@ const NavBar =()=> {
                         variant="contained"
                         startIcon={<Logout />}
                         sx ={btnStyleLogout}
-                        onClick={clickLogout}
+                        onClick= {clickLogout}
                         >
                         Logout
                     </Button>
