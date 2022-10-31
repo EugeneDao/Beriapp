@@ -1,6 +1,7 @@
 import {useNavigate } from 'react-router-dom';
 import { auth } from '../../LandingPage/components/config';
 import {Box,Button,AppBar,Toolbar} from '@mui/material'
+import { Link } from 'react-router-dom';
 import '@mui/icons-material'
 import {BarChart, AssignmentInd, AccountBalanceWallet, Summarize, Logout} from '@mui/icons-material';
 
@@ -59,37 +60,37 @@ const NavBar =()=> {
                     m: "auto",
                     padding: "5px",}}>
 
-                    <Button
+                    <Link to="/beri/chartpage"
                         variant="contained"
                         startIcon={<BarChart />}
                         sx ={btnStyle}
                         >
                         Chartpage
-                    </Button>
+                    </Link>
 
-                    <Button
+                    {/* <Button
                         variant="contained"
                         startIcon={<AssignmentInd />}
                         sx ={btnStyle}
                         >
                         Portfolio
-                    </Button>
+                    </Button> */}
                     
-                    <Button
+                    <Link to="/beri/transactionlist"
                         variant="contained"
                         startIcon={<AccountBalanceWallet />}
                         sx ={btnStyle}
                         >
                         Transactions
-                    </Button>
+                    </Link>
 
-                    <Button
+                    {/* <Button
                         variant="contained"
                         startIcon={<Summarize />}
                         sx ={btnStyle}
                         >
                         Summary
-                    </Button>
+                    </Button> */}
 
                     <Button
                         variant="contained"
