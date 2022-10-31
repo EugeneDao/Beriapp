@@ -150,7 +150,7 @@ const TransactionList = (props) => {
           borderRadius: "9px",
         }}
       >
-        {transactionData.map((item) => {
+        {list.map((item) => {
           return (
             <Transaction
               key={item.id}
