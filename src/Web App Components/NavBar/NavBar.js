@@ -60,7 +60,9 @@ const NavBar =()=> {
                     m: "auto",
                     padding: "5px",}}>
 
-                    <Link to="/beri/chartpage"
+                    <Link
+                    style={{textDecoration:"none", padding:"10px", backgroundColor:"gold"}} 
+                    to="/beri/chartpage"
                         variant="contained"
                         startIcon={<BarChart />}
                         sx ={btnStyle}
